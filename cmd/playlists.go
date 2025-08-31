@@ -79,7 +79,7 @@ var playlistsCmd = &cobra.Command{
 				return
 			}
 
-			fmt.Printf("%s has been played\n", selectedPlaylist)
+			fmt.Printf("Playlist now playing: %s ", selectedPlaylist)
 			info, err := getCurrentSongInfo()
 			if err != nil {
 				fmt.Printf("Error getting current song info: %v", err)
