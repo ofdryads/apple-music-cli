@@ -38,7 +38,7 @@ All credit for creating the project, the original commands, and the album art fe
   - `playlists` - Choose a playlist to play
   - `shuffle` - Toggle shuffle mode in Apple Music
   - `volume` - Set the volume for Apple Music
-  **New commands in this fork:**
+  ##### New commands in this fork:
   - `back` - Go back to the previous song
   - `add` - Add the song that is currently playing to a playlist
   - `new` - Create a new playlist
