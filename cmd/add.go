@@ -24,7 +24,8 @@ end tell
 	return nil
 }
 
-//TODO user can have a "default playlist" that songs will be added to if no option selected
+// TODO user can have a "default playlist" that songs will be added to if no option selected
+// most likely this will be favorites or library
 
 var addCmd = &cobra.Command{
 	Use:   "add [playlist]",

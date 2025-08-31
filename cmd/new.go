@@ -1,5 +1,3 @@
-// create a new playlist
-
 package cmd
 
 import (
@@ -22,4 +20,22 @@ end tell
 	return nil
 }
 
-var newCmd = &cobra.Command{}
+var newCmd = &cobra.Command{
+	Use:   "new [playlist]",
+	Short: "Make a new playlist in Apple Music",
+	Args:  cobra.ExactArgs(1),
+	Run: func(cmd *cobra.Command, args []string) {
+		playlist := args[0]
+
+		err := makePlaylist(playlist)
+		if err != nil {
+			fmt.Printf("Playlist could not be created: %v\n", err)
+			return
+		}
+		fmt.Printf("Playlist '%s' has now been created \n", playlist)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(newCmd)
+}

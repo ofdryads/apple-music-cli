@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Note: back behavior is inconsistent - maybe try more manual way of tracking recently played
 var backCmd = &cobra.Command{
 	Use:   "back",
 	Short: "Go back to the previous track in Apple Music",
