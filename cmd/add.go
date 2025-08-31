@@ -24,8 +24,8 @@ end tell
 	return nil
 }
 
-// user can have a "default playlist" that songs will be added to if no option selected
-// take the playlist name as a part of a command like ./music add nameofplaylist
+//TODO user can have a "default playlist" that songs will be added to if no option selected
+
 var addCmd = &cobra.Command{
 	Use:   "add [playlist]",
 	Short: "Add the song now playing to a playlist",

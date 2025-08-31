@@ -23,6 +23,7 @@ func showPlaylist() ([]string, error) {
 	return playlistNames, nil
 }
 
+// TODO more explicitly handle error where the playlist is empty
 func playPlaylist(playlist string) error {
 	fmt.Printf("Attempting to play playlist: %s \n", playlist)
 	script := fmt.Sprintf(`play playlist named "%s"`, playlist)
@@ -35,14 +36,8 @@ func playPlaylist(playlist string) error {
 
 var playlistsCmd = &cobra.Command{
 	Use:   "playlists",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	Args: cobra.RangeArgs(0, 1),
+	Short: "Display all playlists and select one to play",
+	Args:  cobra.RangeArgs(0, 1),
 	Run: func(cmd *cobra.Command, args []string) {
 		isOpen, err := isMusicOpen()
 		if err != nil {
